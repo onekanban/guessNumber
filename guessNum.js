@@ -5,7 +5,7 @@ var randomNumber = Math.floor(Math.random() * 100);
 $(document).ready(function(){
   $("#guess").click(function (){
       // ask the user for some input
-      var userGuess = prompt("Please guess a number between 1 and 100, you have 7 attempts.");
+      //var userGuess = prompt("Please guess a number between 1 and 100, you have 7 attempts.");
 
       // set a variable to allow us to exit when the number has been properly guessed
       var guess = true;
@@ -16,7 +16,11 @@ $(document).ready(function(){
       while (guess && numGuess <= 7){
 
         if (userGuess != randomNumber){
-          if (userGuess > randomNumber) { //if the user is higher print something and then ask for a new guess
+          if (numGuess == 0){
+           numGuess += 1;
+           var userGuess = prompt("Please guess a number between 1 and 100, you have 7 attempts.");
+          }
+          else if (userGuess > randomNumber) { //if the user is higher print something and then ask for a new guess
             numGuess += 1;
             var userGuess = prompt("Sorry " + userGuess + " was too HIGH. This was guess " + numGuess + ", please try again.");
           }
