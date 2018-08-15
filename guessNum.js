@@ -1,5 +1,3 @@
-
-
 // start of the guessing game so that while the number is unknown and the user has not exceeded 7 guesses, they can make a new guess
 $(document).ready(function(){
   $("#guess").click(function (){
